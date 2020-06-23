@@ -2,7 +2,7 @@
 home: true
 heroText: 进 击 的 小 超 人
 tagline: Enjoy when you can, and endure when you must.
-# heroImage: /hero.png
+# heroImage: /home-bg.png
 # heroImageStyle: {
 #   maxWidth: '600px',
 #   width: '100%',
@@ -11,6 +11,7 @@ tagline: Enjoy when you can, and endure when you must.
 #   background: '#fff',
 #   borderRadius: '1rem',
 # }
+bgImage: /home-bg.jpg
 bgImageStyle: {
   height: '450px'
 }
