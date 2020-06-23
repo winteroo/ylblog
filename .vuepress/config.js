@@ -3,7 +3,7 @@ module.exports = {
   title: "进击的小超人",
   description: 'Enjoy when you can, and endure when you must.',
   dest: 'public',
-  base: '/newblog/',
+  base: '/ylblog/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
