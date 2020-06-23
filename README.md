@@ -1,7 +1,7 @@
 ---
 home: true
-heroText: vuepress-theme-reco
-tagline: A simple and beautiful vuepress blog theme.
+heroText: 进 击 的 小 超 人
+tagline: Enjoy when you can, and endure when you must.
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
