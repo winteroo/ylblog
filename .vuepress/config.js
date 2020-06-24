@@ -1,26 +1,48 @@
 const path = require('path')
+console.log(process.env.NODE_ENV);
+const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
   title: "进击的小超人",
   description: 'Enjoy when you can, and endure when you must.',
   dest: 'public',
   base: '/ylblog/',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
+    ['link', {
+      rel: 'icon',
+      href: '/favicon.ico'
+    }],
+    ['meta', {
+      name: 'viewport',
+      content: 'width=device-width,initial-scale=1,user-scalable=no'
+    }]
   ],
   theme: 'reco',
   themeConfig: {
-    nav: [
-      { text: '首页', link: '/', icon: 'reco-home' },
-      { text: '时间线', link: '/timeline/', icon: 'reco-date' },
-      { text: '关于作者', link: '/blogs/about/', icon: 'reco-account' },
-      { text: '其他', 
+    nav: [{
+        text: '首页',
+        link: '/',
+        icon: 'reco-home'
+      },
+      {
+        text: '时间线',
+        link: '/timeline/',
+        icon: 'reco-date'
+      },
+      {
+        text: '关于作者',
+        link: '/blogs/about/',
+        icon: 'reco-account'
+      },
+      {
+        text: '其他',
         icon: 'reco-message',
-        items: [
-          { text: 'GitHub', link: 'https://github.com/winteroo', icon: 'reco-github' }
-        ]
+        items: [{
+          text: 'GitHub',
+          link: 'https://github.com/winteroo',
+          icon: 'reco-github'
+        }]
       }
-    ], 
+    ],
     type: 'blog',
     // 博客设置
     blogConfig: {
@@ -33,14 +55,12 @@ module.exports = {
         text: '标签' // 默认 “标签”
       }
     },
-    friendLink: [
-      {
-        title: 'vuepress-theme-reco',
-        desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-        avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-        link: 'https://vuepress-theme-reco.recoluan.com'
-      },
-    ],
+    friendLink: [{
+      title: 'vuepress-theme-reco',
+      desc: 'A simple and beautiful vuepress Blog & Doc theme.',
+      avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+      link: 'https://vuepress-theme-reco.recoluan.com'
+    }, ],
     logo: '/logo.jpg',
     // 搜索设置
     search: true,
@@ -72,7 +92,7 @@ module.exports = {
      */
 
     valineConfig: {
-      appId: 'cpPdaCS4D4g9x7hYpeRiqzL8-gzGzoHsz',// your appId
+      appId: 'cpPdaCS4D4g9x7hYpeRiqzL8-gzGzoHsz', // your appId
       appKey: 'qA0YCWkV6C3oYgonyHxagfSL', // your appKey
       placeholder: '发表你的感想...(添加网址可直接点击头像文字进入该地址哦)',
     }
@@ -105,12 +125,11 @@ module.exports = {
     [
       '@vuepress-reco/vuepress-plugin-bgm-player',
       {
-        audios: [
-          {
+        audios: [{
             name: '大鱼',
             artist: '周深',
-            url: '/bgm/dayu/dayu.mp3',
-            cover: '/bgm/dayu/zhoushen.jpg'
+            url: isDev ? '/bgm/dayu/dayu.mp3' : '/ylblog/bgm/dayu/dayu.mp3',
+            cover: isDev ? '/bgm/dayu/zhoushen.jpg' : '/ylblog/bgm/dayu/zhoushen.jpg'
           },
           // 网络文件示例
           {
@@ -131,4 +150,4 @@ module.exports = {
       }
     ]
   ]
-}  
+}
