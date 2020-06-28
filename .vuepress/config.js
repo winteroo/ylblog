@@ -125,12 +125,7 @@ module.exports = {
     [
       '@vuepress-reco/vuepress-plugin-bgm-player',
       {
-        audios: [{
-            name: '大鱼',
-            artist: '周深',
-            url: isDev ? '/bgm/dayu/dayu.mp3' : '/ylblog/bgm/dayu/dayu.mp3',
-            cover: isDev ? '/bgm/dayu/zhoushen.jpg' : '/ylblog/bgm/dayu/zhoushen.jpg'
-          },
+        audios: [
           // 网络文件示例
           {
             name: '강남역 4번 출구',
@@ -143,6 +138,12 @@ module.exports = {
             artist: '최낙타',
             url: 'https://assets.smallsunnyfox.com/music/3.mp3',
             cover: 'https://assets.smallsunnyfox.com/music/3.jpg'
+          },
+          {
+            name: '大鱼',
+            artist: '周深',
+            url: isDev ? '/bgm/dayu/dayu.mp3' : '/ylblog/bgm/dayu/dayu.mp3',
+            cover: isDev ? '/bgm/dayu/zhoushen.jpg' : '/ylblog/bgm/dayu/zhoushen.jpg'
           }
         ],
         // 默认缩小

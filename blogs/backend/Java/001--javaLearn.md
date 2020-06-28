@@ -8,7 +8,9 @@ categories:
 ---
 
 ## 1.设置java编译编码规范
+
 解决java无法输出中文的问题，设置以UTF-8的格式编译
+
 ```bash
 javac -encoding UTF-8  HelloWorld.java
 ```
@@ -18,6 +20,7 @@ javac -encoding UTF-8  HelloWorld.java
 * 使用javac可以将.java源码编译成.class字节码；
 
 * 使用java可以运行一个已编译的Java程序，参数是类名。
+
 ## 3.window下杀进程
 ```bash
 # 查找port端口的进程
