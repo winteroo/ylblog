@@ -2,7 +2,7 @@
 title: 调试Vue程序
 date: 2020-06-23
 tags:
- - JS
+ - js
  - vue
 categories:
  - 前端

@@ -2,7 +2,7 @@
 title: 原型和原型链
 date: 2020-06-23
 tags:
- - JS
+ - js
 categories:
  - 前端
 ---

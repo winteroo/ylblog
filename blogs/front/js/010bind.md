@@ -2,7 +2,7 @@
 title: bind函数
 date: 2020-06-23
 tags:
- - JS 
+ - js 
 categories:
  - 前端
 ---

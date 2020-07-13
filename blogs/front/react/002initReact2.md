@@ -2,7 +2,7 @@
 title: React探索之state
 date: 2020-06-23
 tags:
- - JS
+ - js
  - react
 categories:
  - 前端

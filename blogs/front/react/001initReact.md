@@ -2,7 +2,7 @@
 title: React项目初始化（一）
 date: 2020-06-23
 tags:
- - JS
+ - js
  - react
 categories:
  - 前端

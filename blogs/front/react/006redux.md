@@ -2,7 +2,7 @@
 title: Redux初探
 date: 2020-06-23
 tags:
- - JS
+ - js
  - react
  - redux
 categories:

@@ -2,7 +2,7 @@
 title: React-Router-Dom
 date: 2020-06-23
 tags:
- - JS
+ - js
  - react
  - react-router
 categories:

@@ -2,7 +2,7 @@
 title: 浏览器事件捕获和事件冒泡
 date: 2020-06-30
 tags:
- - JS
+ - js
  - 浏览器
 categories:
  - 前端

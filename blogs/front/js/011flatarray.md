@@ -2,7 +2,7 @@
 title: 数组扁平化
 date: 2020-06-23
 tags:
- - JS 
+ - js 
  - 算法
 categories:
  - 前端

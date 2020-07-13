@@ -2,7 +2,7 @@
 title: Vue组件之验证码
 date: 2020-06-23
 tags:
- - JS
+ - js
  - vue
  - canvas
 categories:
