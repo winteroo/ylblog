@@ -11,7 +11,7 @@
 </template>
 
 <script>
-const tinymceCDN = '/tinymce/tinymce.min.js';
+const tinymceCDN = process.env.NODE_ENV === 'production' ? '/ylblog/tinymce/tinymce.min.js' : '/tinymce/tinymce.min.js';
 const plugins = ['print powerpaste preview searchreplace autolink quickbars directionality visualblocks visualchars fullpage fullscreen image link media template code codesample table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists imagetools wordcount textpattern help emoticons autosave   autoresize indent2em autoresize lineheight  axupimgs addController uploadimg'];
 const toolbar = ['code undo redo restoredraft cut copy paste pastetext  forecolor backcolor bold italic underline strikethrough link anchor   alignleft aligncenter alignright alignjustify outdent indent  styleselect formatselect fontselect  fontsizeselect  bullist numlist   blockquote subscript superscript removeformat  table image media  charmap emoticons hr pagebreak insertdatetime  print preview  fullscreen  indent2em lineheight searchreplace uploadimg addController'];
 export default {
