@@ -46,7 +46,7 @@ export default {
     width: {
       type: [Number, String],
       required: false,
-      default: 740
+      default: 'auto'
     }
   },
   data () {
