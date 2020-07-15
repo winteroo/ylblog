@@ -6,6 +6,11 @@ module.exports = {
   description: 'Enjoy when you can, and endure when you must.',
   dest: 'public',
   base: '/ylblog/',
+  locales: {
+    '/': {
+      lang: 'zh-CN'
+    }
+  },
   head: [
     ['link', {
       rel: 'icon',
@@ -122,33 +127,33 @@ module.exports = {
         }
       }
     ],
-    [
-      '@vuepress-reco/vuepress-plugin-bgm-player',
-      {
-        audios: [
-          // 网络文件示例
-          {
-            name: '강남역 4번 출구',
-            artist: 'Plastic / Fallin` Dild',
-            url: 'https://assets.smallsunnyfox.com/music/2.mp3',
-            cover: 'https://assets.smallsunnyfox.com/music/2.jpg'
-          },
-          {
-            name: '用胳膊当枕头',
-            artist: '최낙타',
-            url: 'https://assets.smallsunnyfox.com/music/3.mp3',
-            cover: 'https://assets.smallsunnyfox.com/music/3.jpg'
-          },
-          {
-            name: '大鱼',
-            artist: '周深',
-            url: isDev ? '/bgm/dayu/dayu.mp3' : '/ylblog/bgm/dayu/dayu.mp3',
-            cover: isDev ? '/bgm/dayu/zhoushen.jpg' : '/ylblog/bgm/dayu/zhoushen.jpg'
-          }
-        ],
-        // 默认缩小
-        autoShrink: false
-      }
-    ]
+    // [
+    //   '@vuepress-reco/vuepress-plugin-bgm-player',
+    //   {
+    //     audios: [
+    //       // 网络文件示例
+    //       {
+    //         name: '강남역 4번 출구',
+    //         artist: 'Plastic / Fallin` Dild',
+    //         url: 'https://assets.smallsunnyfox.com/music/2.mp3',
+    //         cover: 'https://assets.smallsunnyfox.com/music/2.jpg'
+    //       },
+    //       {
+    //         name: '用胳膊当枕头',
+    //         artist: '최낙타',
+    //         url: 'https://assets.smallsunnyfox.com/music/3.mp3',
+    //         cover: 'https://assets.smallsunnyfox.com/music/3.jpg'
+    //       },
+    //       {
+    //         name: '大鱼',
+    //         artist: '周深',
+    //         url: isDev ? '/bgm/dayu/dayu.mp3' : '/ylblog/bgm/dayu/dayu.mp3',
+    //         cover: isDev ? '/bgm/dayu/zhoushen.jpg' : '/ylblog/bgm/dayu/zhoushen.jpg'
+    //       }
+    //     ],
+    //     // 默认缩小
+    //     autoShrink: false
+    //   }
+    // ]
   ]
 }
