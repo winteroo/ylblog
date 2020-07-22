@@ -1,6 +1,7 @@
 ---
 title: 实现进制之间相互转换
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
 categories:

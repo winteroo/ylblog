@@ -1,6 +1,7 @@
 ---
 title: 为子元素添加父id
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
  - 递归

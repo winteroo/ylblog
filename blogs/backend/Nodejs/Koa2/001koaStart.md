@@ -1,6 +1,7 @@
 ---
 title: Koa2源码剖析
 date: 2020-06-23
+sidebar: 'auto'
 sticky: 2
 tags:
  - js

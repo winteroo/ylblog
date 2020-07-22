@@ -1,6 +1,7 @@
 ---
 title: 原型和原型链
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
 categories:

@@ -1,6 +1,7 @@
 ---
 title: JS的继承
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js 
 categories:

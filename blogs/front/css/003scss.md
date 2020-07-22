@@ -1,6 +1,7 @@
 ---
 title: SCSS
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - css
 categories:

@@ -1,6 +1,7 @@
 ---
 title: element-ui日期时间选择控件特殊用法
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
  - vue

@@ -1,6 +1,7 @@
 ---
 title: 正则表达式
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js 
  - 正则表达式

@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "vuepress": "1.5.0",
-    "vuepress-theme-reco": "1.4.7"
+    "vuepress-theme-reco": "^1.5.3"
   },
   "dependencies": {
     "@vuepress-reco/vuepress-plugin-bgm-player": "^1.1.3",

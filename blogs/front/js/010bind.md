@@ -1,6 +1,7 @@
 ---
 title: bind函数
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js 
 categories:

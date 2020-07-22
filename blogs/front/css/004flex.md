@@ -1,6 +1,7 @@
 ---
 title: Flex布局
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - css
 categories:

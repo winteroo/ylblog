@@ -1,6 +1,7 @@
 ---
 title: TCP和UDP
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
  - 计算机网络

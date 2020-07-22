@@ -1,6 +1,7 @@
 ---
 title: 新建spring boot项目
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - java
  - spring boot

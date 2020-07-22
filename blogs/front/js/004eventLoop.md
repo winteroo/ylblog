@@ -1,6 +1,7 @@
 ---
 title: JS事件循环(Event Loop)
 date: 2020-06-23
+sidebar: 'auto'
 sticky: 1
 tags:
  - js

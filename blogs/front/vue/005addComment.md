@@ -1,6 +1,7 @@
 ---
 title: 为vuepress搭建的网站添加无后台的评论功能
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
  - vue

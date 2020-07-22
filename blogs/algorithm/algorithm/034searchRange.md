@@ -1,6 +1,7 @@
 ---
 title: 在排序数组中查找元素的第一个和最后一个位置
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
  - 二分查找

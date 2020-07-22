@@ -1,7 +1,7 @@
 ---
 title: 关于作者
 date: 2020-06-23
-sidebar: false
+sidebar: 'auto'
 ---
 
 ## 作者

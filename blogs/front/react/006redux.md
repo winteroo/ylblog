@@ -1,6 +1,7 @@
 ---
 title: Redux初探
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
  - react

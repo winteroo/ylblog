@@ -1,6 +1,7 @@
 ---
 title: React探索之props
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
  - react

@@ -29,6 +29,20 @@ module.exports = {
         icon: 'reco-home'
       },
       {
+        text: '系列教程',
+        icon: 'reco-document',
+        items: [{
+          text: 'webpack教程',
+          link: '/docs/webpack/01introduce.md'
+        },{
+          text: 'babel教程',
+          link: '/docs/babel/01.md'
+        },{
+          text: 'eslint教程',
+          link: '/docs/eslint/01.md'
+        }]
+      },
+      {
         text: '时间线',
         link: '/timeline/',
         icon: 'reco-date'
@@ -48,6 +62,27 @@ module.exports = {
         }]
       }
     ],
+    sidebar: {
+      '/docs/webpack/': [{
+        title: 'webpack基础',
+        collapsable: true,
+        children: ['01introduce','02primer','02.5mode','03entry','04output','05loader','06plugin','07devserver']
+      },{
+        title: 'webpack进阶',
+        collapsable: true,
+        children: ['09splitchunk','10treeshaking','11writeloader','12writeplugin']
+      }],
+      '/docs/babel/': [{
+        title: 'babel教程',
+        collapsable: false,
+        children: ['01']
+      }],      
+      '/docs/eslint/': [{
+        title: 'eslint教程',
+        collapsable: false,
+        children: ['01']
+      }]
+    },
     type: 'blog',
     // 博客设置
     blogConfig: {
@@ -65,13 +100,13 @@ module.exports = {
       desc: 'A simple and beautiful vuepress Blog & Doc theme.',
       avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
       link: 'https://vuepress-theme-reco.recoluan.com'
-    }, ],
+    }],
     logo: '/logo.jpg',
     // 搜索设置
     search: true,
     searchMaxSuggestions: 10,
     // 自动形成侧边导航
-    sidebar: 'auto',
+    // sidebar: 'auto',
     // 最后更新时间
     lastUpdated: '上次更新',
     // 作者
@@ -82,6 +117,7 @@ module.exports = {
     record: '',
     // 项目开始时间
     startYear: '2020',
+    editLinks: true,
     /**
      * 密钥 (if your blog is private)
      */
@@ -109,7 +145,8 @@ module.exports = {
         '@About': path.join(__dirname, '..', 'blogs/about'),
         '@Algorithm': path.join(__dirname, '..', 'blogs/algorithm'),
         '@Backend': path.join(__dirname, '..', 'blogs/backend'),
-        '@Other': path.join(__dirname, '..', 'blogs/other')
+        '@Other': path.join(__dirname, '..', 'blogs/other'),
+        '@Webpack': path.join(__dirname, '..', 'docs/webpack')
       }
     }
   },

@@ -1,6 +1,7 @@
 ---
 title: 搜索插入位置
 date: 2020-06-23
+sidebar: 'auto'
 tags:
  - js
  - 二分查找
