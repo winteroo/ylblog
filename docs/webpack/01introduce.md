@@ -16,7 +16,7 @@ webpack官网的解释：
 > 本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。
 
 简单说，webpack就是可以把你的项目的分散的相同类型的文件打包到一个文件中（当然也可以分成多个文件），然后再index.html文件中
-只需要引入一个js一个css文件就可以了。当然，webpack发展这么就，其能力已经被大大扩展：
+只需要引入一个js一个css文件就可以了。当然，webpack发展这么久，其能力已经被大大扩展：
 
 * 代码转换
 
