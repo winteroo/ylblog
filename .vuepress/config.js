@@ -39,7 +39,7 @@ module.exports = {
           link: '/docs/babel/01.md'
         },{
           text: 'eslint教程',
-          link: '/docs/eslint/01.md'
+          link: '/docs/eslint/01introduce.md'
         }]
       },
       {
@@ -80,7 +80,7 @@ module.exports = {
       '/docs/eslint/': [{
         title: 'eslint教程',
         collapsable: false,
-        children: ['01']
+        children: ['01introduce','02start','03config','04eslintvue']
       }]
     },
     type: 'blog',
@@ -146,7 +146,8 @@ module.exports = {
         '@Algorithm': path.join(__dirname, '..', 'blogs/algorithm'),
         '@Backend': path.join(__dirname, '..', 'blogs/backend'),
         '@Other': path.join(__dirname, '..', 'blogs/other'),
-        '@Webpack': path.join(__dirname, '..', 'docs/webpack')
+        '@Webpack': path.join(__dirname, '..', 'docs/webpack'),
+        '@Eslint': path.join(__dirname, '..', 'docs/eslint')
       }
     }
   },
