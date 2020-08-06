@@ -3,7 +3,7 @@ console.log(process.env.NODE_ENV);
 const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
   title: "进击的小超人",
-  description: 'Enjoy when you can, and endure when you must.',
+  description: '前端，javascript，js，算法，webpack，webpack4，webpack教程,babel，babel7，babel教程，eslint，vue，vue3，react',
   dest: 'public',
   base: '/ylblog/',
   locales: {
@@ -36,7 +36,7 @@ module.exports = {
           link: '/docs/webpack/01introduce.md'
         },{
           text: 'babel教程',
-          link: '/docs/babel/01.md'
+          link: '/docs/babel/01introduce.md'
         },{
           text: 'eslint教程',
           link: '/docs/eslint/01introduce.md'
@@ -75,7 +75,7 @@ module.exports = {
       '/docs/babel/': [{
         title: 'babel教程',
         collapsable: false,
-        children: ['01']
+        children: ['01introduce', '02start', '03configFile', '04polyfill', '05presets', '06plugins' ]
       }],      
       '/docs/eslint/': [{
         title: 'eslint教程',
@@ -147,7 +147,8 @@ module.exports = {
         '@Backend': path.join(__dirname, '..', 'blogs/backend'),
         '@Other': path.join(__dirname, '..', 'blogs/other'),
         '@Webpack': path.join(__dirname, '..', 'docs/webpack'),
-        '@Eslint': path.join(__dirname, '..', 'docs/eslint')
+        '@Eslint': path.join(__dirname, '..', 'docs/eslint'),
+        '@Babel': path.join(__dirname, '..', 'docs/babel')
       }
     }
   },
