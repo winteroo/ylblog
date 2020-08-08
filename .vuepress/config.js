@@ -75,7 +75,7 @@ module.exports = {
       '/docs/babel/': [{
         title: 'babel教程',
         collapsable: false,
-        children: ['01introduce', '02start', '03configFile', '04polyfill', '05presets', '06plugins' ]
+        children: ['01introduce', '02start', '03configFile', '04polyfill', '05presets', '06plugins', '07more' ]
       }],      
       '/docs/eslint/': [{
         title: 'eslint教程',
