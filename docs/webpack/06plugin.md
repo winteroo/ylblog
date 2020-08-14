@@ -57,6 +57,12 @@ module.exports = {
 
 * [friendly-errors-webpack-plugin](https://github.com/geowarin/friendly-errors-webpack-plugin) : 友好的日志格式
 
+* [stylelint-webpack-plugin](https://github.com/webpack-contrib/stylelint-webpack-plugin): stylelint相关的webpack插件
+
+* [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer): weback打包后文件大小分析插件，会在打包完成后在<http://127.0.0:8888启动一个可视化的bundle>文件分布视图。
+
+* [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)：压缩css代码的webpack插件
+
 ## 配置详情
 
 plugin扩展了webpack的能力，是的webpack可以实现任意的功能。下面提供本次项目的插件配置：
@@ -133,7 +139,6 @@ module.exports = {
 
 ![webpack5](~@Webpack/images/webpack5.gif)
 
-
 我们可以发现，动态路由正常生成了对应chunk文件，而且css和静态资源也各自打包进了各自的文件夹，生成的index.html文件
 也正确的引用了正确路径的css和js文件。让我们看下打包后的文件在服务端跑起来是否正常：
 
@@ -141,12 +146,8 @@ module.exports = {
 
 很不错，正常运行了！
 
-
-##  总结
+## 总结
 
 至此，我们已经完成了vue项目的打包配置，而且能够正常打包，打包后的文件也是可以正常运行的，虽然我们的项目可以正常打包，
 但是我们不能总是打包后看效果，我们需要一个开发环境，能展示我们的页面效果，要是能实时响应我们的修改那就更好了，那接下来让我们一同探索下
 开发服务器的配置过程吧。
-
-
-

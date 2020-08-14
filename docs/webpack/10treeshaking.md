@@ -18,7 +18,6 @@ tree-shaking是由rollup的作者首先提出的，这里有一个比喻：
 基于 ES6 的静态引用，tree shaking 通过扫描所有 ES6 的 `export`，找出被 `import` 的内容并添加到最终代码中。 webpack 的实现是把所有 `import` 标记为有使用/无使用两种，在后续压缩时进行区别处理。
 因为就如比喻所说，在放入烤箱(压缩混淆)前先剔除蛋壳(无使用的 `import`)，只放入有用的蛋白蛋黄(有使用的 `import`)。
 
-
 ## 使用方法
 
 ### 测试未tree-shaking的情况
@@ -46,6 +45,7 @@ export const dd = () => {
   console.log('测试treedd');
 };
 ```
+
 并在detail.vue文件中引入了其中两个方法。
 
 ```vue
@@ -68,7 +68,9 @@ export default {
 };
 </script>
 ```
+
 为了能清楚的查看打包后的代码，我们暂时关闭代码压缩（即关闭tree shaking）。
+
 ```js
 module.exports = {
   optimization: {
@@ -77,6 +79,7 @@ module.exports = {
   }
 }
 ```
+
 打包查看效果：
 
 ![treeshaking1](~@Webpack/images/treeshaking1.gif)
@@ -86,7 +89,6 @@ module.exports = {
 我们观察生成的打包文件，会发现如下特征：
 
 ![treeshaking2](~@Webpack/images/treeshaking2.png)
-
 
 * 被使用过的 `export` 标记为 `/* harmony export ([type]) */`，其中 `[type]` 和 webpack 内部有关，可能是 `binding`, `immutable` 等等。
 
@@ -125,6 +127,7 @@ webpack4采用`terser-webpack-plugin`作为压缩工具，而webpack3采用的�
   ]
 }
 ```
+
 ::: tip
 经过作者测试，在webpack4和babel7中即使不设置`"modules": false`，也可以正常tree shaking，目前还不知道原因。
 :::
@@ -133,6 +136,7 @@ webpack4采用`terser-webpack-plugin`作为压缩工具，而webpack3采用的�
 
 webpack 4 在 `package.json` 新增了一个配置项叫做 `sideEffects`， 值为 `false` 表示整个包都没有副作用；
 或者是一个数组列出有副作用的模块
+
 ```json
 {
   "sideEffects": "['./src/util/cc.js']"
@@ -189,6 +193,7 @@ module.exports = {
   }
 }
 ```
+
 所有涉及样式文件的规则都需要添加`sideEffects: true`，表示这类文件是有副作用的。
 
 接下来，再让我们打包看下：
@@ -196,7 +201,6 @@ module.exports = {
 ![treeshaking4](~@Webpack/images/treeshaking4.gif)
 
 运行一切正常，那tree shaking生效了吗？
-
 
 ![treeshaking5](~@Webpack/images/treeshaking5.gif)
 ![treeshaking6](~@Webpack/images/treeshaking6.png)
@@ -217,7 +221,8 @@ module.exports = {
 
 至此，我们已经完成了完整的vue项目的webpack配置，需要源码的同学请移步
 
-[我的github查看vue项目的webpack配置]()
+[我的github查看vue项目的webpack配置](https://github.com/winteroo/vue-webpack4-template)
+
+[react项目webpack配置](https://github.com/winteroo/react-template)
 
 真正的自己摆脱脚手架工具的帮助，自己配置一个vue项目，你会从中学习到很多东西，对于webpack的认识也会更近一步，妈妈再也不怕我不会自己配置webpack了。
-

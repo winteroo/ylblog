@@ -131,7 +131,6 @@ module.exports = {
 单个入口文件的最大请求数。
 
 > 译注：如果按照着配置规则，最终提取出的初始载入chunks数量大于该配置项，则优先级较低的多余chunks不会被分割成公共chunks（通常是取符合数量的size较大的几个）。
-
 > 需要注意的是，入口chunk + 默认缓存组的vendors配置项 + 默认缓存组的default配置项，这就已经是3个了，如果自定义的缓存组配置无效，注意查证该配置。
 
 ### `splitChunks.minChunks`
@@ -162,14 +161,12 @@ module.exports = {
 > `maxSize`比`maxInitialRequest/maxAsyncRequests`有更高的优先级。优先级顺序为`maxInitialRequest/maxAsyncRequests < maxSize < minSize`。
 
 **译：官方解释的比较绕，但是其实仔细读几遍，结合理解他提到的其他配置项，会觉得说的很清楚了。这个配置项默认为0，也就是不做限制。如果做了限制，并且提取出来的chunk大于该限制，那么会把这个chunk按照minSize的规则作二次拆分，并且最终拆分出的chunks数量优先级要大于按需载入／初始载入的最大限制数量。**
- 
+
 ### `splitChunks.name`
 
 `boolean: true | function (module) | string`
 
 提取出来的chunk name。设置为`true`会根据chunks和缓存组的key来自动命名。设置为string或者function来确定你想要的命名。如果name和入口文件name相同，入口文件将被移除。
-
-**webpack.config.js**
 
 ```js
 module.exports = {
@@ -190,8 +187,6 @@ module.exports = {
 ### `splitChunks.cacheGroups`
 
 缓存组的配置项会继承`splitChunks.*`的配置，但是`test`，`priority`和`reuseExistingChunk`只能在缓存组中配置。 **如果不需要默认的缓存组，设置为`false`（这个很重要）** 。
-
-**webpack.config.js**
 
 ```js
 module.exports = {
@@ -218,8 +213,6 @@ module.exports = {
 
 如果当前chunk包含的模块已经打包进主bundle，将不再被打包进当前chunk。该配置项这会影响到chunk name。
 
-**webpack.config.js**
-
 ```js
 module.exports = {
   //...
@@ -240,8 +233,6 @@ module.exports = {
 `function (module, chunk) | RegExp | string`
 
 module的匹配规则。默认会对所有模块进行优化。你可以对module的绝对路径或者chunk name做匹配。如果匹配到一个chunk name，它的所有子模块都会被尝试提取。
-
-**webpack.config.js**
 
 ```js
 module.exports = {
@@ -269,8 +260,6 @@ module.exports = {
 
 > 该选项也可以通过`splitChunks.filename`全局配置，但是我们不建议这么做，因为如果`splitChunks.chunks`没有设置为`initial`，有可能引发报错。
 
-**webpack.config.js**
-
 ```js
 module.exports = {
   //...
@@ -291,8 +280,6 @@ module.exports = {
 `boolean: false`
 
 强制提取符合该缓存组策略的modules，并且忽略`splitChunks.minSize`、`splitChunks.minChunks`、`splitChunks.maxAsyncRequests`和`splitChunks.maxInitialRequests`配置项。
-
-**webpack.config.js**
 
 ```js
 module.exports = {
@@ -319,6 +306,7 @@ module.exports = {
 ![splitchunk](~@Webpack/images/splitchunk.gif)
 
 接下来，让我们配置下将lodash文件从主文件中剥离，同时vue和vue-router打包进同一文件中。
+
 ```js
 module.exports = {
     optimization: {

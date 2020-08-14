@@ -18,15 +18,14 @@ loader 甚至允许你直接在 JavaScript 模块中 `import` CSS文件！
 
 ## loader特性
 
-*  loader 支持链式传递。能够对资源使用流水线(pipeline)。一组链式的 loader 将按照相反的顺序执行。loader 链中的第一个 loader 返回值给下一个 loader。在最后一个 loader，返回 webpack 所预期的 JavaScript。
-*  loader 可以是同步的，也可以是异步的。
-*  loader 运行在 Node.js 中，并且能够执行任何可能的操作。
-*  loader 接收查询参数。用于对 loader 传递配置。
-*  loader 也能够使用 options 对象进行配置。
-*  除了使用 package.json 常见的 main 属性，还可以将普通的 npm 模块导出为 loader，做法是在 package.json 里定义一个 loader 字段。
-*  插件(plugin)可以为 loader 带来更多特性。
-*  loader 能够产生额外的任意文件。
-
+* loader 支持链式传递。能够对资源使用流水线(pipeline)。一组链式的 loader 将按照相反的顺序执行。loader 链中的第一个 loader 返回值给下一个 loader。在最后一个 loader，返回 webpack 所预期的 JavaScript。
+* loader 可以是同步的，也可以是异步的。
+* loader 运行在 Node.js 中，并且能够执行任何可能的操作。
+* loader 接收查询参数。用于对 loader 传递配置。
+* loader 也能够使用 options 对象进行配置。
+* 除了使用 package.json 常见的 main 属性，还可以将普通的 npm 模块导出为 loader，做法是在 package.json 里定义一个 loader 字段。
+* 插件(plugin)可以为 loader 带来更多特性。
+* loader 能够产生额外的任意文件。
 
 ## loader配置
 
@@ -52,6 +51,7 @@ module.exports = {
   }
 }
 ```
+
 ::: tip
 其中的每项规则，我们用Rule来表示。以下篇幅的Rule也是单个规则配置项的意思。
 :::
@@ -103,6 +103,7 @@ module.exports = {
   }
 }
 ```
+
 以上配置告诉webpack，当你遇到`.css`结尾的文件时，你需要先把该文件交给css-loader处理，然后将返回值交给style-loader处理，当然，在`options`中可以
 根据不同的loader的配置要求进行必要的配置。
 
@@ -179,6 +180,7 @@ module.exports = {
   }
 }
 ```
+
 但是在实际项目开发中，我们更希望css作为单独的文件已link标签的方式进行引入，那么我们就需要分离css文件，并在最后的html文件中自动插入css文件路径。
 
 * [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) 帮助我们分离css
@@ -194,6 +196,7 @@ npm i css-loader -D
 npm i html-webpack-plugin -D
 npm i mini-css-extract-plugin -D
 ```
+
 建议分开安装，合并在一起安装经常会出现不可预测的问题。
 
 ```js
@@ -230,6 +233,7 @@ module.exports = {
 }
 
 ```
+
 ### sass文件
 
 处理sass文件的loader为sass-loader，这里我们还需要配置postcss来帮助我们增强css
@@ -240,6 +244,7 @@ module.exports = {
 npm i sass node-sass sass-loader -D
 npm i postcss-loader postcss-import postcss-url autoprefixer -D
 ```
+
 ::: warning
 sass和node-sass的版本如果不匹配会出现问题，这里建议下载匹配版本。
 
@@ -264,6 +269,7 @@ module.exports = {
   }
 }
 ```
+
 :::
 
 最终的webpack配置信息：
@@ -300,6 +306,7 @@ module.exports = {
   }
 }
 ```
+
 ### js文件
 
 在工程项目中，我们一般会使用较新的es6语法来编写js代码，但是为了兼容不同的浏览器（万恶的ie），我么需要降低js语法的版本为es5来支持不同浏览器。
@@ -307,24 +314,19 @@ module.exports = {
 
 首先安装babel以及配套插件，这里我提供下我的配置版本：
 
-```
-"@babel/core": "^7.10.5",
-"@babel/plugin-proposal-decorators": "^7.10.5",
-"@babel/plugin-proposal-export-namespace-from": "^7.10.4",
-"@babel/plugin-proposal-function-sent": "^7.10.4",
-"@babel/plugin-proposal-numeric-separator": "^7.10.4",
-"@babel/plugin-proposal-throw-expressions": "^7.10.4",
-"@babel/plugin-transform-runtime": "^7.10.5",
-"@babel/preset-env": "^7.10.4",
-"@babel/preset-stage-2": "^7.8.3",
-"babel-eslint": "^10.1.0",
-"babel-loader": "^8.1.0",
-"babel-plugin-syntax-jsx": "^6.18.0",
-"babel-plugin-transform-vue-jsx": "^3.7.0",
-"clean-webpack-plugin": "^3.0.0",
+```json
+{
+  "@babel/core": "^7.10.5",
+  "@babel/preset-env": "^7.10.4",
+  "babel-eslint": "^10.1.0",
+  "babel-loader": "^8.1.0",
+  "babel-plugin-syntax-jsx": "^6.18.0",
+  "babel-plugin-transform-vue-jsx": "^3.7.0"
+}
 ```
 
 具体配置如下：
+
 ```js
 module.exports = {
   ...
@@ -340,34 +342,34 @@ module.exports = {
 }
 ```
 
-为了让babel更好的工作，你需要在根目录提供babel的配置文件`.babelrc`，这里我们不具体说如何配置babel，仅展示配置结果，
+为了让babel更好的工作，你需要在根目录提供babel的配置文件`babel.config.js`，这里我们不具体说如何配置babel，仅展示配置结果，
 如果你对babel感兴趣，那么你可能会对我的[babel系列教程](https://winteroo.github.io/ylblog/docs/babel/)感兴趣。
 
-```.babelrc
-{
-  "presets": [
-    "@babel/preset-env"
+```js
+module.exports = {
+  presets: [
+    ['@babel/preset-env', {
+      useBuiltIns: 'entry',
+      // useBuiltIns: 'usage',
+      corejs: 3,
+      modules: false
+    }]
   ],
-  "plugins": [
-    "transform-vue-jsx", 
-    "@babel/plugin-transform-runtime",
-    ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    "@babel/plugin-proposal-function-sent",
-    "@babel/plugin-proposal-export-namespace-from",
-    "@babel/plugin-proposal-numeric-separator",
-    "@babel/plugin-proposal-throw-expressions"
-  ]
-}
+  plugins: ['transform-vue-jsx', '@babel/plugin-transform-runtime']
+};
+
 ```
+
 ### 静态资源文件
 
 静态资源文件我们都使用url-loader来解析
 
 首先安装：
 
-```
+```bash
 npm i url-loader -D
 ```
+
 具体配置如下：相关配置项可参考
 
 * [url-loader](https://github.com/webpack-contrib/url-loader)
@@ -375,6 +377,7 @@ npm i url-loader -D
 * [file-loader](https://github.com/webpack-contrib/file-loader)
 
 ::: tip
+
 * 1、url-loader依赖file-loader
 
 * 2、当使用url-loader加载图片，图片大小小于上限值，则将图片转base64字符串，；否则使用file-loader加载图片，都是为了提高浏览器加载图片速度。
@@ -433,6 +436,7 @@ module.exports = {
 ```bash
 npm i vue-loader vue-template-compiler -D
 ```
+
 ::: tip
 注意你应该将 `vue-loader` 和 `vue-template-compiler` 一起安装，并且需要保证你的`vue`和`vue-template-compiler`的版本保持一致。
 :::
@@ -456,6 +460,7 @@ module.exports = {
   ]
 }
 ```
+
 ::: tip
 引入`VueLoaderPlugin`这个插件是必须的，它是用来解析vue文件的对应块来适应你已经配置的规则，例如：
 我们前面配置了js和css的规则，那么这个插件就会将对应的`<script>`块的内容解析为普通js提供给webpack处理，同理
@@ -475,15 +480,20 @@ eslint感兴趣，那么你可能会对我的[eslint系列教程](https://winter
 :::
 
 ```js
-// https://eslint.org/docs/user-guide/configuring
-
 module.exports = {
   root: true,
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
   env: {
-    browser: true
+    browser: true,
+    es6: true,
+    node: true
+  },
+  // 使用vue-eslint-parser解析vue文件
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    // 使用babel-eslint解析js文件以及vuescript标签内的内容
+    parser: 'babel-eslint',
+    ecmaVersion: 8,
+    sourceType: 'module'
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
@@ -506,21 +516,23 @@ module.exports = {
     'no-var': 0 // 禁用var，用let和const代替
   }
 };
+
 ```
 
 我的eslint相关插件版本
 
-```
-"eslint": "^7.4.0",
-"eslint-config-standard": "^14.1.1",
-"eslint-friendly-formatter": "^4.0.1",
-"eslint-loader": "^4.0.2",
-"eslint-plugin-import": "^2.22.0",
-"eslint-plugin-node": "^11.1.0",
-"eslint-plugin-promise": "^4.2.1",
-"eslint-plugin-standard": "^4.0.1",
-"eslint-plugin-vue": "^6.2.2",
-
+```json
+{
+  "eslint": "^7.6.0",
+  "eslint-config-standard": "^14.1.1",
+  "eslint-friendly-formatter": "^4.0.1",
+  "eslint-loader": "^4.0.2",
+  "eslint-plugin-import": "^2.22.0",
+  "eslint-plugin-node": "^11.1.0",
+  "eslint-plugin-promise": "^4.2.1",
+  "eslint-plugin-standard": "^4.0.1",
+  "eslint-plugin-vue": "^6.2.2"
+}
 ```
 
 下面提供eslint-loader的配置:
@@ -560,7 +572,6 @@ eslint-loader的作用是帮助我们检查我们书写的源代码的格式规�
 告诉webpack，当你遇到js或是vue文件时，先交给eslint-loader处理，处理完之后再交给其他loader处理。
 
 :::
-
 
 ## 总结
 
@@ -693,16 +704,4 @@ module.exports = {
 };
 ```
 
-
 但是对于webpack来说，只有loader处理文件还不够，我们需要plugin（插件）来增强loader的作用，并实现一些高级功能，那么下面就让我们一同探索plugin的世界吧。
-
-
-
-
-
-
-
-
-
-
-

@@ -30,7 +30,7 @@ webpack官网的解释：
 
 * ......
 
-现如今，三大开发框架基本三分天下，他们都是基于webpack进行项目打包的，如果你使用过vue-cli和creat-react-app等工具，
+现如今，三大开发框架三分天下，他们都是基于webpack进行项目打包的，如果你使用过vue-cli和creat-react-app等工具，
 也会发现他们生成的项目也是基于webpack构建的，所以，目前webpack是前端开发的趋势，webpack的出现为前端工程化提供了基础。
 
 ## 教程安排
@@ -58,5 +58,3 @@ webpack官网的解释：
 ## 参考文档
 
 [webpack官方文档](https://webpack.docschina.org/)
-
-

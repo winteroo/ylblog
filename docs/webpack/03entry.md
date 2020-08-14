@@ -11,7 +11,6 @@ categories:
 
 入口对象`entry`是用于 `webpack` 查找开始构建 bundle 的地方。上下文是入口文件所处的目录的绝对路径的字符串。
 
-
 ## `entry`
 
 `entry`分为单文件入口和多文件入口。
@@ -20,7 +19,8 @@ categories:
 
 配置方式:
 
-* 1、字符串形式 
+* 1、字符串形式
+
 ```js
 const path = require('path')
 module.exports = {
@@ -53,7 +53,6 @@ module.exports = {
 
 这样，打包生成的文件就会称为`app.js`，与文件对象的key值相同。
 
-
 ::: tip 提示
 
 如果输入文件为数组形式会如何呢，就像下面这样：
@@ -69,7 +68,7 @@ module.exports = {
 根据`webpack`官方说法，输入为数组形式，则数组的所有子元素都会作为构建的入口，但是他们最终会打包出一个文件为`app.js`，而不是
 想多文件入口那样打包出多个文件。
 
-一些单页应用项目会采用在入口处添加`babel-polyfill`，作为入口文件，这样来做浏览器的兼容性处理。
+一些单页应用项目会采用在入口处添加`@babel/polyfill`，作为入口文件，这样来做浏览器的兼容性处理。
 
 ![entry1](~@Webpack/images/entry1.gif)
 :::
@@ -86,6 +85,7 @@ module.exports = {
   }
 }
 ```
+
 使用此配置最后会生成`app.js`和`main.js`文件。
 
 ![entry2](~@Webpack/images/entry2.gif)
