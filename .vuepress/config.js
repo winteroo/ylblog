@@ -40,6 +40,9 @@ module.exports = {
         },{
           text: 'eslint教程',
           link: '/docs/eslint/01introduce.md'
+        },{
+          text: 'Vue源码解读',
+          link: '/docs/vue/01introduce.md'
         }]
       },
       {
@@ -81,6 +84,31 @@ module.exports = {
         title: 'eslint教程',
         collapsable: false,
         children: ['01introduce','02start','03config','04eslintvue']
+      }],
+      '/docs/vue/': [{
+        title: '写在最前面',
+        collapsable: false,
+        children: ['01introduce']
+      },{
+        title: '生命周期',
+        collapsable: false,
+        children: ['02lifecycle', '03initVue', '04initlifecycle', '05initEvents', '06initRender', '07initInjections', '08initState']
+      },{
+        title: '数据变化监测',
+        collapsable: false,
+        children: ['03state', '04arrayState']
+      },{
+        title: '虚拟DOM',
+        collapsable: false,
+        children: ['13vnode', '14patch', '15updateChildren']
+      },{
+        title: '模板编译',
+        collapsable: false,
+        children: ['09templateCompiler','10parse', '11optimizer', '12gencode']
+      },{
+        title: '内置组件',
+        collapsable: false,
+        children: ['16keepalive']
       }]
     },
     type: 'blog',
@@ -148,7 +176,8 @@ module.exports = {
         '@Other': path.join(__dirname, '..', 'blogs/other'),
         '@Webpack': path.join(__dirname, '..', 'docs/webpack'),
         '@Eslint': path.join(__dirname, '..', 'docs/eslint'),
-        '@Babel': path.join(__dirname, '..', 'docs/babel')
+        '@Babel': path.join(__dirname, '..', 'docs/babel'),
+        '@Vue': path.join(__dirname, '..', 'docs/vue')
       }
     }
   },
